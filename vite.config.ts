@@ -58,5 +58,8 @@ export default defineConfig({
         : null, sentryVitePlugin({
         org: "me-32t",
         project: "iterative-recipes"
+    }), sentryVitePlugin({
+        org: "david-huynh",
+        project: "iterative-recipes"
     })],
 })
