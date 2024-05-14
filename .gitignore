@@ -29,9 +29,3 @@ node_modules
 
 # Sentry Config File
 .env.sentry-build-plugin
-
-# Sentry Config File
-.sentryclirc
-
-# Sentry Config File
-.env.sentry-build-plugin
