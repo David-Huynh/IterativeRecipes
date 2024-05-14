@@ -43,11 +43,11 @@ ADD . .
 
 # Mount the secret and set it as an environment variable and run the build
 RUN --mount=type=secret,id=SENTRY_AUTH_TOKEN \
-    export SENTRY_AUTH_TOKEN=$(cat /run/secrets/SENTRY_AUTH_TOKEN) \
     --mount=type=secret,id=SENTRY_ORG \
-    export SENTRY_ORG=$(cat /run/secrets/SENTRY_ORG) \
     --mount=type=secret,id=SENTRY_PROJECT \
-    export SENTRY_PROJECT=$(cat /run/secrets/SENTRY_PROJECT)  && \
+    export SENTRY_AUTH_TOKEN=$(cat /run/secrets/SENTRY_AUTH_TOKEN) && \
+    export SENTRY_ORG=$(cat /run/secrets/SENTRY_ORG) && \
+    export SENTRY_PROJECT=$(cat /run/secrets/SENTRY_PROJECT) && \
     npm run build
 
 # Finally, build the production image with minimal footprint
