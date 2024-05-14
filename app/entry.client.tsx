@@ -1,5 +1,5 @@
-import * as Sentry from "@sentry/remix";
 import { RemixBrowser, useLocation, useMatches } from '@remix-run/react';
+import * as Sentry from "@sentry/remix";
 import { startTransition, useEffect } from 'react';
 import { hydrateRoot } from 'react-dom/client'
 
