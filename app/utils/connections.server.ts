@@ -31,3 +31,4 @@ export function resolveConnectionData(
 ) {
 	return providers[providerName].resolveConnectionData(providerId, options)
 }
+
