@@ -55,8 +55,5 @@ export default defineConfig({
                     ]),
                 },
             })
-        : null, sentryVitePlugin({
-        org: "david-huynh",
-        project: "recipe"
-    })],
+        : null],
 })
