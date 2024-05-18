@@ -157,7 +157,7 @@ export const headers: HeadersFunction = ({ loaderHeaders }) => {
 }
 
 const ThemeFormSchema = z.object({
-	theme: z.enum(['system', 'light', 'dark']),
+	theme: z.enum(['light', 'dark']),
 })
 
 export async function action({ request }: ActionFunctionArgs) {
@@ -257,9 +257,8 @@ function App() {
 				<div className="flex-1">
 					<Outlet />
 				</div>
-
-				<div className="container flex justify-between pb-5">
-					<Logo />
+				
+				<div className="container flex flex-row-reverse pb-5">
 					<ThemeSwitch userPreference={data.requestInfo.userPrefs.theme} />
 				</div>
 			</div>
@@ -273,10 +272,10 @@ function Logo() {
 	return (
 		<Link to="/" className="group grid leading-snug">
 			<span className="font-light transition group-hover:-translate-x-1">
-				epic
+				Iterative
 			</span>
 			<span className="font-bold transition group-hover:translate-x-1">
-				notes
+				Recipes
 			</span>
 		</Link>
 	)
@@ -363,7 +362,7 @@ export function useTheme() {
 	const requestInfo = useRequestInfo()
 	const optimisticMode = useOptimisticThemeMode()
 	if (optimisticMode) {
-		return optimisticMode === 'system' ? hints.theme : optimisticMode
+		return optimisticMode
 	}
 	return requestInfo.userPrefs.theme ?? hints.theme
 }
@@ -396,9 +395,8 @@ function ThemeSwitch({ userPreference }: { userPreference?: Theme | null }) {
 	})
 
 	const optimisticMode = useOptimisticThemeMode()
-	const mode = optimisticMode ?? userPreference ?? 'system'
-	const nextMode =
-		mode === 'system' ? 'light' : mode === 'light' ? 'dark' : 'system'
+	const mode = optimisticMode ?? userPreference ?? 'light'
+	const nextMode = mode === 'light' ? 'dark' : 'light'
 	const modeLabel = {
 		light: (
 			<Icon name="sun">
@@ -409,12 +407,7 @@ function ThemeSwitch({ userPreference }: { userPreference?: Theme | null }) {
 			<Icon name="moon">
 				<span className="sr-only">Dark</span>
 			</Icon>
-		),
-		system: (
-			<Icon name="laptop">
-				<span className="sr-only">System</span>
-			</Icon>
-		),
+		)
 	}
 
 	return (

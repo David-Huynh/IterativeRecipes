@@ -59,14 +59,8 @@ export async function loader({ request }: LoaderFunctionArgs) {
 		where: { target_type: { type: twoFAVerificationType, target: userId } },
 	})
 
-	const password = await prisma.password.findUnique({
-		select: { userId: true },
-		where: { userId },
-	})
-
 	return json({
 		user,
-		hasPassword: Boolean(password),
 		isTwoFactorEnabled: Boolean(twoFactorVerification),
 	})
 }
@@ -133,26 +127,12 @@ export default function EditUserProfile() {
 			<div className="col-span-6 my-6 h-1 border-b-[1.5px] border-foreground" />
 			<div className="col-span-full flex flex-col gap-6">
 				<div>
-					<Link to="change-email">
-						<Icon name="envelope-closed">
-							Change email from {data.user.email}
-						</Icon>
-					</Link>
-				</div>
-				<div>
 					<Link to="two-factor">
 						{data.isTwoFactorEnabled ? (
 							<Icon name="lock-closed">2FA is enabled</Icon>
 						) : (
 							<Icon name="lock-open-1">Enable 2FA</Icon>
 						)}
-					</Link>
-				</div>
-				<div>
-					<Link to={data.hasPassword ? 'password' : 'password/create'}>
-						<Icon name="dots-horizontal">
-							{data.hasPassword ? 'Change Password' : 'Create a Password'}
-						</Icon>
 					</Link>
 				</div>
 				<div>
