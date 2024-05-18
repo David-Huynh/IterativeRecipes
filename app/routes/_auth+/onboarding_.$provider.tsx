@@ -37,8 +37,8 @@ import { authSessionStorage } from '#app/utils/session.server.ts'
 import { redirectWithToast } from '#app/utils/toast.server.ts'
 import { NameSchema, UsernameSchema } from '#app/utils/user-validation.ts'
 import { verifySessionStorage } from '#app/utils/verification.server.ts'
-import { onboardingEmailSessionKey } from './onboarding'
 
+export const onboardingEmailSessionKey = 'onboardingEmail'
 export const providerIdKey = 'providerId'
 export const prefilledProfileKey = 'prefilledProfile'
 
@@ -196,9 +196,10 @@ export default function SignupRoute() {
 
 	return (
 		<div className="container flex min-h-full flex-col justify-center pb-32 pt-20">
-			<div className="mx-auto w-full max-w-lg">
+			<div className="mx-auto w-full">
 				<div className="flex flex-col gap-3 text-center">
-					<h1 className="text-h1">Welcome aboard {data.email}!</h1>
+					<h1 className="text-h1">Welcome aboard</h1>
+					<h1 className="text-h1">{data.email}!</h1>
 					<p className="text-body-md text-muted-foreground">
 						Please enter your details.
 					</p>
