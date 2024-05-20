@@ -6,75 +6,76 @@
 	:root {
 		/* --font-sans: here if you have one */
 		/* --font-mono: here if you got it... */
-
+	
 		/* prefixed with foreground because it should look good on the background */
-		--foreground-destructive: 345 82.7% 40.8%;
-
-		--background: 0 0% 100%;
-		--foreground: 222.2 84% 4.9%;
-
-		--muted: 0 0% 89%;
-		--muted-foreground: 215.4 16.3% 30%;
-
-		--popover: 0 0% 100%;
-		--popover-foreground: 222.2 84% 4.9%;
-
-		--card: 0 0% 100%;
-		--card-foreground: 222.2 84% 4.9%;
-
-		--border: 214.3 31.8% 91.4%;
-		--input: 214.3 31.8% 91.4%;
-		--input-invalid: 0 84.2% 60.2%;
-
-		--primary: 222.2 47.4% 11.2%;
-		--primary-foreground: 210 40% 98%;
-
-		--secondary: 0 0% 89%;
-		--secondary-foreground: 222.2 47.4% 11.2%;
-
-		--accent: 0 0% 95%;
-		--accent-foreground: 222.2 47.4% 11.2%;
-
-		--destructive: 0 70% 50%;
-		--destructive-foreground: 210 40% 98%;
-
-		--ring: 215 20.2% 65.1%;
-
-		--radius: 0.5rem;
+		--foreground-destructive: 0 100% 50%; /* Bright red for destructives */
+	
+		--background: 0 0% 100%; /* White background */
+		--foreground: 21 75% 17%; /* Dark earthy red/brown */
+	
+		--muted: 0 0% 95%; /* Very light gray for muted backgrounds */
+		--muted-foreground: 21 30% 30%; /* Softer version of the foreground color */
+	
+		--popover: 0 0% 98%; /* Light gray for popover backgrounds */
+		--popover-foreground: 21 75% 17%; /* Consistent with the main foreground */
+	
+		--card: 0 0% 98%; /* Light gray for card backgrounds */
+		--card-foreground: 21 75% 17%; /* Consistent with the main foreground */
+	
+		--border: 87 25% 85%; /* Light green for borders */
+		--input: 87 25% 95%; /* Very light green for inputs */
+		--input-invalid: 0 70% 50%; /* Bright red for invalid inputs */
+	
+		--primary: 87 25% 72%; /* Soft light green */
+		--primary-foreground: 21 75% 17%; /* Dark earthy red/brown for contrast */
+	
+		--secondary: 21 30% 90%; /* Very light earthy red/brown for secondary elements */
+		--secondary-foreground: 21 75% 17%; /* Consistent with the main foreground */
+	
+		--accent: 87 25% 85%; /* Light green accent */
+		--accent-foreground: 21 75% 17%; /* Consistent with the main foreground */
+	
+		--destructive: 0 70% 50%; /* Bright red for destructive actions */
+		--destructive-foreground: 0 0% 100%; /* White text on destructive actions */
+	
+		--ring: 87 25% 72%; /* Soft light green ring */
+	
+		--radius: 0.5rem; /* Border radius */
 	}
-
+	
 	.dark {
-		--background: 222.2 84% 4.9%;
-		--foreground: 210 40% 98%;
-
+		--background: 210 20% 12%; /* Dark slate gray background */
+		--foreground: 0 0% 95%; /* Off-white for high contrast text */
+	
 		/* prefixed with foreground because it should look good on the background */
-		--foreground-destructive: -4 84% 60%;
-
-		--muted: 217.2 32.6% 12%;
-		--muted-foreground: 215 20.2% 65.1%;
-
-		--popover: 222.2 84% 4.9%;
-		--popover-foreground: 210 40% 98%;
-
-		--card: 222.2 84% 4.9%;
-		--card-foreground: 210 40% 98%;
-
-		--border: 217.2 32.6% 17.5%;
-		--input: 217.2 32.6% 17.5%;
-		--input-invalid: 0 62.8% 30.6%;
-
-		--primary: 210 40% 98%;
-		--primary-foreground: 222.2 47.4% 11.2%;
-
-		--secondary: 217.2 20% 24%;
-		--secondary-foreground: 210 40% 98%;
-
-		--accent: 217.2 32.6% 10%;
-		--accent-foreground: 210 40% 98%;
-
-		--destructive: 0 60% 40%;
-		--destructive-foreground: 0 85.7% 97.3%;
-
-		--ring: 217.2 32.6% 60%;
+		--foreground-destructive: 0 85% 65%; /* Bright red for destructives */
+	
+		--muted: 210 20% 18%; /* Slightly lighter slate gray for muted backgrounds */
+		--muted-foreground: 0 0% 80%; /* Light gray for muted foreground */
+	
+		--popover: 210 20% 12%; /* Same as background for consistency */
+		--popover-foreground: 0 0% 95%; /* Off-white for popovers */
+	
+		--card: 210 20% 18%; /* Slightly lighter slate gray for cards */
+		--card-foreground: 0 0% 95%; /* Off-white for cards */
+	
+		--border: 87 25% 30%; /* Dark green for borders */
+		--input: 87 25% 30%; /* Same dark green for inputs */
+		--input-invalid: 0 70% 50%; /* Bright red for invalid inputs */
+	
+		--primary: 87 25% 60%; /* Soft light green */
+		--primary-foreground: 210 20% 12%; /* Dark slate gray for contrast */
+	
+		--secondary: 87 25% 40%; /* Dark green for secondary elements */
+		--secondary-foreground: 0 0% 95%; /* Off-white for secondary foreground */
+	
+		--accent: 87 25% 30%; /* Dark green for accents */
+		--accent-foreground: 0 0% 95%; /* Off-white for accent foreground */
+	
+		--destructive: 0 70% 50%; /* Bright red for destructive actions */
+		--destructive-foreground: 0 0% 100%; /* White text on destructive actions */
+	
+		--ring: 87 25% 60%; /* Soft light green ring */
 	}
+	
 }
