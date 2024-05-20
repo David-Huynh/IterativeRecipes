@@ -1,7 +1,7 @@
 import { type MetaFunction } from '@remix-run/node'
 
 
-export const meta: MetaFunction = () => [{ title: 'Epic Notes' }]
+export const meta: MetaFunction = () => [{ title: 'Iterative Recipes' }]
 
 
 
