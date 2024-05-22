@@ -146,6 +146,8 @@ jobs:
     steps:
       - name: ⬇️ Checkout repo
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: 👀 Read app name
         uses: SebRollen/toml-action@v1.2.0
@@ -176,7 +178,7 @@ jobs:
         run:
           flyctl deploy --remote-only --build-arg COMMIT_SHA=${{ github.sha }}
           --build-secret SENTRY_AUTH_TOKEN=${{ secrets.SENTRY_AUTH_TOKEN }}
-          --build-secret SENTRY_ORG=${{ secrets.SENTRY_ORG }}
-          --build-secret SENTRY_PROJECT=${{ secrets.SENTRY_PROJECT }}
+          --build-secret SENTRY_ORG=${{ secrets.SENTRY_ORG }} --build-secret
+          SENTRY_PROJECT=${{ secrets.SENTRY_PROJECT }}
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
