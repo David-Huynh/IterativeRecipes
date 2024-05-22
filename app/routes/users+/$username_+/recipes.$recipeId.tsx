@@ -1,7 +1,6 @@
 /*
  * This file is part of Iterative Recipes.
  *
- * Originally created by Kent C. Dodds.
  * Copyright (C) 2024 David Huynh <david@dhuynh.ca>
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,12 +17,9 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { expect, test } from '#tests/playwright-utils.ts'
+// If is private and recipe creator id === user id show recipe and edit button
+// If is private and recipe creator id !== user id show 404
+// If is public show recipe and edit button depending if creator id === user id
 
-test('Test root error boundary caught', async ({ page }) => {
-	const pageUrl = '/does-not-exist'
-	const res = await page.goto(pageUrl)
+// Displays the current main recipe
 
-	expect(res?.status()).toBe(404)
-	await expect(page.getByText(/We can't find this page/i)).toBeVisible()
-})
