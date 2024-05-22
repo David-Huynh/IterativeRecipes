@@ -1,7 +1,7 @@
 {
   "name": "iterative-recipes",
   "private": true,
-  "license": "MIT",
+  "license": "GPL-3.0-only",
   "author": " David Huynh <david@dhuynh.ca> (https://dhuynh.ca/)",
   "sideEffects": false,
   "type": "module",
